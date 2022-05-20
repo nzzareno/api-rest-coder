@@ -1,28 +1,8 @@
+const { customAlphabet } = require("nanoid");
+const nanoid = customAlphabet("1234567890", 5);
 class Productos {
   constructor() {
-    this.productos = [
-      {
-        title: "DC Gorra Star Flexfit Curve Brim Hat",
-        price: 500,
-        thumbnail:
-          "https://m.media-amazon.com/images/I/81PxWIXqKGL._AC_UX679_.jpg",
-        id: 1,
-      },
-      {
-        title: "PUMA Evercat Dillon - Gorra elástica",
-        price: 420,
-        thumbnail:
-          "https://m.media-amazon.com/images/I/71Fdr1s6NxL._AC_UX679_.jpg",
-        id: 2,
-      },
-      {
-        title: "VOLCOM Gorra Flexfit Full Stone",
-        price: 300,
-        thumbnail:
-          "https://m.media-amazon.com/images/I/81VCRQ5O5lL._AC_UX679_.jpg",
-        id: 3,
-      },
-    ];
+    this.productos = [];
   }
 
   obtenerProductos() {
@@ -36,7 +16,7 @@ class Productos {
   create(data) {
     const newProduct = {
       ...data,
-      id: this.productos.length + 1,
+     id:  nanoid(),
     };
     this.productos.push(newProduct);
     return newProduct;
