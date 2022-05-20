@@ -5,7 +5,7 @@ const port = 8080;
 const { customAlphabet } = require("nanoid");
 const nanoid = customAlphabet("1234567890", 5);
 
-app.set("view engine", "pug");
+app.set("view engine", "ejs");
 app.use(express.static(__dirname + "public"));
 app.set("views", "./views");
 app.use(express.json());
